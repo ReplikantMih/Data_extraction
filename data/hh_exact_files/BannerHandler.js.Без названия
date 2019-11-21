@@ -1,0 +1,150 @@
+/**
+ * Урезанный bannerHandler для подключения напрямую из баннерного размещения.
+ * Скрипт не должен иметь зависимости на внешние библиотеки.
+ */
+(function() {
+    'use strict';
+
+    var BANNER_PLACE_PREFIX = 'banner-place_';
+
+    var createClickableArea = function(bannerJson, bannerPlace) {
+        var div = document.createElement('div');
+        div.style.width = bannerJson.width + 'px';
+        div.style.height = bannerJson.height + 'px';
+        div.style.position = 'absolute';
+        div.onclick = function() {
+            window.open(bannerJson.click);
+        };
+        bannerPlace.appendChild(div);
+    };
+
+    var handlers = {
+        html: function(bannerJson, bannerPlace) {
+            bannerPlace.onclick = function() {
+                window.open(bannerJson.click);
+            };
+            bannerPlace.innerHTML = bannerJson.body;
+        },
+        external: function(bannerJson, bannerPlace) {
+            if (bannerJson.clickable) {
+                createClickableArea(bannerJson, bannerPlace);
+            }
+
+            var iframe = document.createElement('iframe');
+            iframe.style.width = (bannerJson.width || 0) + 'px';
+            iframe.style.height = (bannerJson.height || 0) + 'px';
+            iframe.src = bannerJson.src;
+            iframe.frameBorder = 'no';
+            iframe.scrolling = 'no';
+            bannerPlace.appendChild(iframe);
+        },
+        image: function(bannerJson, bannerPlace) {
+            var a = document.createElement('a');
+            a.href = bannerJson.click;
+            a.target = '_blank';
+
+            var img = document.createElement('img');
+            img.src = bannerJson.src;
+
+            a.appendChild(img);
+            bannerPlace.appendChild(a);
+        },
+        clickme: function(bannerJson, bannerPlace) {
+            var clickmeStyles = '.clickme-banner{display:inline-block;overflow:hidden;font-size:12px;font-family:Arial,sans-serif}.clickme-banner__limit{font-size:10px;line-height:1;vertical-align:middle;text-align:center;margin:0 0 0 2px;padding:0 1px;display:inline;border:1px solid #b3b3b3;border-radius:1px;color:#666}.clickme-banner__image{width:90px;height:75px;padding-right:15px;float:left}.clickme-banner__text{color:#675959;padding-top:3px}.clickme-banner__body{float:left;width:calc(100% - (90px + 15px));color:#273237}.clickme-banner__link{display:block;color:#000;line-height:18px}.clickme-banner__link:hover,.clickme-banner__link:active,.clickme-banner__link:focus{text-decoration:none}.clickme-banner a{text-decoration:none}';
+            var clickmeTemplate = '<div class="clickme-banner"><a href="%link%" class="clickme-banner__link" rel="noopener" target="_blank"><div class="clickme-banner__image"><img src="%src%"/></div><div class="clickme-banner__body">%title%<span class="clickme-banner__limit">16+</span><div class="clickme-banner__text">%body%</div></div></a></div>';
+
+            var style = document.createElement('style');
+            style.innerText = clickmeStyles;
+            document.head.appendChild(style);
+
+            var templateData = {
+                "%body%": bannerJson.body,
+                "%title%": bannerJson.title,
+                "%src%": bannerJson.src,
+                "%link%": bannerJson.click
+            };
+
+            bannerPlace.innerHTML = clickmeTemplate.replace(/%\w+%/g, function(str){
+                return templateData[str];
+            });
+        }
+    };
+
+    var Banners = {
+        /**
+         * JSONP калбек похода за баннером
+         *
+         * @param {Object} json Ответ баннерки
+         */
+        put: function(json) {
+            var bannerJson = json.banners[0];
+            if (!bannerJson.empty) {
+                handlers[bannerJson.type](bannerJson, document.querySelector('.' + BANNER_PLACE_PREFIX + bannerJson.place));
+            }
+        },
+
+        /**
+         * Метод для похода за баннером.
+         *
+         * @param {Object} attributes                             Словарь с get параметрами запроса
+         * @param {Number} attributes.place                       ID запрашиваемого баннерного места
+         * @param {String} [attributes.url='//hhcdn.ru/pv?'] Адрес куда ходить за баннером
+         */
+        get: function(attributes) {
+            var xhr = new XMLHttpRequest();
+            var url = attributes.url || '//hhcdn.ru/pv?';
+            attributes['format'] = 'json';
+            for (var key in attributes) {
+                if (key !== 'url') {
+                    url += key + '=' + attributes[key] + '&';
+                }
+            }
+            xhr.open("GET", url);
+            xhr.send();
+            xhr.onload = function() {
+                var bannerJson = JSON.parse(xhr.response)
+                Banners.put(bannerJson);
+            };
+        },
+
+        /**
+         * Инициализационный метод, который находит все ноды с атрибутом [data-request-banner], считывает свойства,
+         * размещает после этой ноды тег баннера и ходит за баннером.
+         *
+         * @example
+         * <script src="hhcdn.ru/BannerHandler.js" data-request-banner="place=101"> </script>
+         */
+        init: function() {
+            var PARAM_ATTRIBUTE = 'data-request-banner';
+            var parseRequestParams = function(node) {
+                var paramsObject = {};
+                var bannerParams = node.getAttribute(PARAM_ATTRIBUTE).split('&');
+                node.removeAttribute(PARAM_ATTRIBUTE);
+
+                for (var i = 0, l = bannerParams.length; i < l; i++) {
+                    var param = bannerParams[i].split('=');
+                    paramsObject[param[0]] = param[1];
+                }
+
+                return paramsObject;
+            };
+
+            var requestNodesList = document.querySelectorAll('[' + PARAM_ATTRIBUTE + ']');
+
+            for (var i = 0, l = requestNodesList.length; i < l; i++) {
+                var requestNode = requestNodesList[i];
+                var attributes = parseRequestParams(requestNode);
+
+                var banner = document.createElement('div');
+                banner.className = BANNER_PLACE_PREFIX + attributes.place;
+                requestNode.parentNode.insertBefore(banner, requestNode);
+
+                Banners.get(attributes);
+            }
+        }
+    };
+
+    Banners.init();
+
+    window.Banners = Banners;
+})();

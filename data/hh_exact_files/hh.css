@@ -1,0 +1,628 @@
+.vishnu-widget *, .vishnu-widget *:before, .vishnu-widget *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.vishnu-widget.vishnu-view-ready {
+    display: block !important;
+}
+
+.vishnu-container {
+    width: 380px;
+    height: 380px;
+    overflow: visible;
+    background: transparent;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 101;
+    opacity: 0.99;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.1);
+    font: 11px Arial, sans-serif;
+}
+#vishnu-view {
+    width: 81px;
+    height: 88px;
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    z-index: 201;
+    background: url('../images/sprite.png') -60px 0px no-repeat;
+}
+#vishnu-view .vishnu-img {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 211;
+}
+
+#vishnu-header {
+    position: absolute;
+    width: 237px;
+    height: 35px;
+    top: 26px;
+    left: 100px;
+    line-height: 1.8;
+    cursor: default;
+}
+#vishnu-header b {
+    font: 14px Arial, sans-serif;
+    color: #131314;
+    font-weight: bold;
+}
+#vishnu-header span {
+    font: 11px Arial, sans-serif;
+    color: #f11c24;
+    font-style: italic;
+    bottom: 7px;
+    padding-left: 2px;
+    position: absolute;
+}
+#vishnu-header i {
+    font: 12px Arial, sans-serif;
+    color: #515151;
+    font-style: italic;
+}
+
+#vishnu-toggle {
+    display: none;
+    width: 150px;
+    height: 145px;
+    position: absolute;
+    top: 185px;
+    left: 35px;
+    z-index: 301;
+    cursor: pointer;
+}
+#vishnu-response {
+    width: 370px;
+    height: 232px;
+    position: absolute;
+    top: 83px;
+    left: 5px;
+    z-index: 501;
+}
+#vishnu-response-wrap {
+    width: 100%;
+    max-height: 232px;
+    position: relative;
+}
+#vishnu-response-text {
+    width: 370px;
+    left: 0px;
+    top: 0px;
+    max-height: 232px;
+    height: 232px;
+    overflow: hidden;
+    position: relative;
+    z-index: 511;
+    line-height: 16px;
+    outline: none;
+    color: #000;
+    background: rgba(255, 255, 255, 0.6);
+}
+#vishnu-response-text .vishnu-userlink {
+    color: #131314;
+    /*cursor: default;*/
+    cursor: pointer;
+    text-decoration: none;
+}
+#vishnu-response-text .vishnu-last-message .vishnu-userlink, #vishnu-response-text .vishnu-last-message.vishnu-savelink-message .vishnu-userlink {
+    color: #789;
+    text-decoration: none;
+    border-bottom: 1px dashed #000;
+}
+#vishnu-response-text .vishnu-click {
+    color: #038fc9;
+    text-decoration: underline;
+}
+
+#vishnu-request {
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    bottom: 14px;
+    left: 15px;
+    z-index: 601;
+    border: 1px solid #e0d8d8;
+    background-color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#vishnu-input {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 300px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    overflow-x: hidden;
+    vertical-align: middle;
+    white-space: normal;
+    background: transparent;
+    color: #131314;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+    font: 12px Arial, sans-serif;
+}
+#vishnu-input.vishnu-placeholder-default {
+    color: #898989;
+}
+#vishnu-send {
+    border: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 7px;
+    right: 6px;
+    vertical-align: middle;
+    background: url('../images/sprite.png') -15px 0px no-repeat;
+    cursor: pointer;
+    outline: none;
+}
+#vishnu-send::-moz-focus-inner {
+    border: none;
+}
+#vishnu-send:active {
+    border: none;
+}
+
+#vishnu-close {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 8px;
+    right: 8px;
+    background: url('../images/sprite.png') 0px 0px no-repeat;
+    cursor: pointer;
+    z-index: 251;
+}
+.vishnu-response-message {
+    position: relative;
+    padding-top: 0px;
+}
+.vishnu-inf-message {
+    width: 350px;
+    border: 1px solid #9fd8ff;
+    position: relative;
+    word-wrap: break-word;
+    color: #131314;
+    padding: 9px 9px 9px 12px;
+    /*font-weight: bold !important;*/
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 1001;
+    font: 12px/18px Arial,sans-serif;
+}
+.vishnu-user-message {
+    max-width: 350px;
+    min-width: 350px;
+    position: relative;
+    word-wrap: break-word;
+    padding-top: 0px;
+    color: #131314;
+    right: 0px;
+    top: 0px;
+    padding: 9px 9px 9px 12px;
+    /*font-weight: bold !important;*/
+    margin-left: 10px;
+    border: 1px solid #9fd8ff;
+    background: rgba(159, 216, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 1001;
+    font: 12px/18px Arial,sans-serif;
+}
+.vishnu-empty-box p {
+    height: 9px;
+}
+.vishnu-user-message:after {
+    width: 8px;
+    height: 10px;
+    position: absolute;
+    content: "";
+    bottom: 13px;
+    right: -8px;
+    background: url('../images/sprite.png') -38px 0px no-repeat;
+    z-index: 1001;
+}
+.vishnu-inf-message:after {
+    width: 8px;
+    height: 10px;
+    position: absolute;
+    content: "";
+    bottom: 13px;
+    left: -8px;
+    background: url('../images/sprite.png') -47px 0px no-repeat;
+    z-index: 1001;
+}
+
+#vishnu-rate {
+    position: relative;
+    padding-top: 0px;
+    overflow: hidden;
+    z-index: 1001;
+    font: 12px Arial, sans-serif;
+    font-weight: bold;
+}
+#vishnu-rate-text {
+    margin: 5px 0 0 22px;
+    height: 28px;
+    color: #000000;
+}
+.vishnu-yes-rate-selected #vishnu-rate-yes, .vishnu-no-rate-selected #vishnu-rate-no {
+    cursor: default;
+}
+.vishnu-yes-rate-selected #vishnu-rate-no, .vishnu-no-rate-selected #vishnu-rate-yes {
+    opacity: 0.2;
+    cursor: default;
+}
+#vishnu-rate-yes {
+    position: absolute;
+    left: 162px;
+    top: 5px;
+    width: 33px;
+    height: 17px;
+    z-index: 600;
+    color: #038fc9;
+    cursor: pointer;
+}
+#vishnu-rate-no {
+    position: absolute;
+    left: 185px;
+    top: 5px;
+    width: 33px;
+    height: 17px;
+    z-index: 600;
+    color: #c92720;
+    cursor: pointer;
+}
+#vishnu-rate-close {
+    display: none;
+}
+#vishnu-rate-thanks {
+    display: none;
+}
+#vishnu-rate-details {
+    display: none;
+    margin: 0 0 10px 30px;
+}
+#vishnu-rate-details A {
+    color: #038fc9;
+}
+#vishnu-rate-details A:hover {
+    color: #038fc9;
+}
+.vishnu-show-thanks-message{
+}
+#vishnu-speech {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    /*
+    display: none;
+    position: absolute;
+    border: 0px;
+    padding: 17px 0 0px 0;
+    width: 15px;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    outline: 0;*/
+}
+
+
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.vishnu-widget .jspContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.vishnu-widget .jspPane {
+    position: absolute;
+}
+
+.vishnu-widget .jspVerticalBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: transparent;
+    z-index: 1001;
+}
+
+.vishnu-widget .jspHorizontalBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: transparent;
+}
+
+.vishnu-widget .jspVerticalBar *,
+.vishnu-widget .jspHorizontalBar * {
+    margin: 0;
+    padding: 0;
+}
+
+.vishnu-widget .jspCap {
+    display: block;
+}
+
+.vishnu-widget .jspCap.jspCapTop {
+    height: 0px;
+    width: 0;
+}
+
+.vishnu-widget .jspCap.jspCapBottom {
+    height: 9px;
+    width: 0;
+}
+
+.vishnu-widget .jspHorizontalBar .jspCap {
+    float: left;
+}
+
+.vishnu-widget .jspTrack {
+    position: relative;
+    background: transparent;
+}
+
+.vishnu-widget .jspDrag {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #bbbbbb;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    overflow: hidden;
+    -webkit-transition: right 0.1s linear, width 0.1s linear;
+    -moz-transition: right 0.1s linear, width 0.1s linear;
+    -ms-transition: right 0.1s linear, width 0.1s linear;
+    -o-transition: right 0.1s linear, width 0.1s linear;
+    transition: right 0.1s linear, width 0.1s linear;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+}
+
+.vishnu-widget .jspHorizontalBar .jspTrack,
+.vishnu-widget .jspHorizontalBar .jspDrag {
+    float: left;
+    height: 100%;
+}
+
+.vishnu-widget .jspArrow {
+    background: #50506d;
+    text-indent: -20000px;
+    display: block;
+    cursor: pointer;
+}
+
+.vishnu-widget .jspArrow.jspDisabled {
+    cursor: default;
+    background: #80808d;
+}
+
+.vishnu-widget .jspVerticalBar .jspArrow {
+    height: 16px;
+}
+
+.vishnu-widget .jspHorizontalBar .jspArrow {
+    width: 16px;
+    float: left;
+    height: 100%;
+}
+
+.vishnu-widget .jspVerticalBar .jspArrow:focus {
+    outline: none;
+}
+
+.vishnu-widget .jspCorner {
+    background: #eeeef4;
+    float: left;
+    height: 100%;
+}
+
+/*предотвращение сброса стилей списков (reset.css)*/
+.vishnu-inf-message ul { list-style: disc; }
+.vishnu-inf-message ol { list-style: decimal; }
+
+.vishnu-inf-message ul, .vishnu-inf-message ol {
+    margin-left: 17px;
+}
+
+.vishnu-inf-message ul li ul, .vishnu-inf-message ul li ol,
+.vishnu-inf-message ol li ol, .vishnu-inf-message ol li ul {
+    margin-left:10%;
+}
+
+
+
+
+/*POPUP*/
+#vishnu-popup {
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+
+    position: fixed;
+    z-index: 200;
+
+    box-sizing: border-box;
+    height: 422px;
+    padding: 30px 30px 50px;
+
+    color: #333;
+    background-color: white;
+
+    border-radius: 4px;
+}
+
+#vishnu-popup #vishnu-popup-error {
+    color: red;
+    position: absolute;
+    top: 8px;
+    left: 30px;
+}
+
+#vishnu-popup #vishnu-popup-error.is-hidden {
+    display: none;
+}
+
+#vishnu-popup-three {
+    overflow-y: scroll;
+
+    height: 100%;
+}
+
+#vishnu-popup-three .top-lvl {
+    padding-left: 19px;
+
+    background: transparent url('//i.hh.ru/bloko/bloko/blocks/icon/chevron-down-icon.svg') no-repeat 0 3px;
+}
+
+#vishnu-popup-three .top-lvl > span {
+    cursor: pointer;
+}
+
+#vishnu-popup-three .top-lvl.isClose {
+    background-image: url('//i.hh.ru/bloko/bloko/blocks/icon/chevron-right-icon.svg');
+}
+
+
+#vishnu-popup-three .last-lvl.close {
+    display: none;
+}
+
+#vishnu-popup-three .last-lvl label {
+    display: inline-table;
+
+    margin-left: 24px;
+
+    cursor: pointer;
+}
+#vishnu-popup-three .last-lvl label > span {
+    position: relative;
+
+    display: table-cell;
+}
+#vishnu-popup-three .last-lvl label > span:before {
+    position: absolute;
+    top: 3px;
+    right: 100%;
+    bottom: 0;
+
+    display: inline-block;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+
+    content: ' ';
+
+    border: 1px solid #cbd1d4;
+    background: #fff;
+}
+#vishnu-popup-three .last-lvl label > span.checked:before {
+    border-color: #0f8fee;
+    background: #0f8fee url('//i.hh.ru/bloko/bloko/blocks/checkbox/check.svg') no-repeat 50% 2px;
+}
+#vishnu-popup-three .last-lvl label input {
+    display: none;
+}
+
+#vishnu-popup .popup-footer {
+    text-align: right;
+    margin-top: 10px;
+}
+#vishnu-popup .popup-footer button {
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 28px;
+
+    position: relative;
+
+    display: inline-block;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 30px;
+    margin: 0;
+    padding: 0 15px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transition: background-color .2s ease-in-out,color .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+            transition: background-color .2s ease-in-out,color .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+            transition: background-color .2s ease-in-out,color .2s ease-in-out,box-shadow .2s ease-in-out;
+            transition: background-color .2s ease-in-out,color .2s ease-in-out,box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: #333;
+    border: 1px solid;
+    border-color: #cbd1d4;
+    border-radius: 0;
+    background-color: #f9f9f9;
+
+    -webkit-appearance: none;
+}
+
+#vishnu-popup .popup-footer button.TreeSelectorPopup-Submit {
+    margin-left: 5px;
+
+    color: #fff;
+    border-color: #0f8fee;
+    background-color: #0f8fee;
+}
+
+.vishnu-container #vishnu-request:before {
+    display: none;
+}
+.vishnu-container.preloader #vishnu-request:before {
+    position: absolute;
+    /*top: 0;*/
+    left: 2px;
+    bottom: 2px;
+
+    display: block;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+
+    content: ' ';
+
+    background: transparent url('../images/preloader.gif') no-repeat center center;
+}

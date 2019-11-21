@@ -1,0 +1,2 @@
+.grid-absolute{position:fixed;z-index:9999;width:100%;height:100%;left:0;top:0;pointer-events:none}.grid-absolute .bloko-columns-wrapper{position:relative;height:100%;outline:1px solid #f00;z-index:99999}.grid__column{margin:0 -15px;padding:0 15px;height:3000px;outline:1px solid green;background-color:pink;background-clip:content-box,content-box;opacity:.3}.grid__columns-wrapper{outline:1px solid orange;height:100%}
+/*# sourceMappingURL=__grid_2387bdf250166181cce181d293ef8af9.css.map */

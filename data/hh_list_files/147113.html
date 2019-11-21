@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0036)https://hhcdn.ru/nposter/147113.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title><style>.clickme-banner{display:inline-block;overflow:hidden;font-size:12px;font-family:Arial,sans-serif}.clickme-banner__limit{font-size:10px;line-height:1;vertical-align:middle;text-align:center;margin:0 0 0 2px;padding:0 1px;display:inline;border:1px solid #b3b3b3;border-radius:1px;color:#666}.clickme-banner__image{width:90px;height:75px;padding-right:15px;float:left}.clickme-banner__text{color:#675959;padding-top:3px}.clickme-banner__body{float:left;width:calc(100% - (90px + 15px));color:#273237}.clickme-banner__link{display:block;color:#000;line-height:18px}.clickme-banner__link:hover,.clickme-banner__link:active,.clickme-banner__link:focus{text-decoration:none}.clickme-banner a{text-decoration:none}</style></head><body style="margin: 0; padding: 0;">
+
+
+<script src="./BannerHandler.js.Без названия"></script>
+<script async="async" type="text/javascript" src="./publishertag.js.Без названия"></script>
+
+<script>
+window.Criteo = window.Criteo || {};
+window.Criteo.events = window.Criteo.events || [];
+var adUnits = {
+    "placements": [
+    {
+        "slotid": "napi",
+        "zoneid": 1266202,
+		"nativeCallback": function processCriteo(json) {
+				var content = document.getElementById('napi'), htmlcode = '';
+				htmlcode += '<a href="' + json.privacy.optout_click_url + '" target="_blank"><img src="'+ json.privacy.optout_image_url + '" class="napi_opt_out"></a>';
+				htmlcode += '<a href="' + json.products[0].click_url + '" class="napi_text" target="_blank"><img src="' + json.products[0].image.url + '" class="napi_image">';
+				htmlcode += json.products[0].title;
+				htmlcode += '<span class="napi_text_body">' + json.products[0].price + '</span>';
+				htmlcode += '<span class="napi_text_body">Перейти на ' + json.advertiser.domain + '</span></a>';
+				for (i in json.impression_pixels) {
+					htmlcode += '<img src="' + json.impression_pixels[i].url + '" width="0px" height="0px" style="display:none" >';
+				}
+				content.innerHTML = htmlcode;
+			}
+    }
+    ]
+}
+Criteo.events.push(function() {
+	Criteo.Passback.RequestBids(adUnits, 1500);
+});
+</script>
+
+<style>
+#napi {
+	width:100%;
+	max-height:150px;
+	display:inline-block;
+	overflow:hidden;
+    font-size:12px;
+	font-family:Arial,sans-serif;
+	text-decoration:none;
+	background:transparent;
+	padding:0;
+    margin:0;
+    border:none;
+    outline:none;
+}
+.napi_image {
+	max-width:90px;
+	max-height:75px;
+	padding-right:15px;
+	float:left;
+	
+}
+.napi_text {
+	display:block;
+	color:#000000;
+	text-decoration:none;
+	line-height:21px;
+}
+.napi_text_body {
+	display:block;
+	color:#777777;
+	text-decoration:none;
+}
+.napi_opt_out {
+	position:fixed !important;
+	margin:0; 
+	padding:0;
+	width:19px;
+	height:15px;
+}
+</style>
+
+
+
+
+
+<div id="napi"><div class="banner-place_673"><div class="clickme-banner"><a href="https://hhcdn.ru/click?b=159744&amp;domainAreaId=1&amp;place=673&amp;version=2" class="clickme-banner__link" rel="noopener" target="_blank"><div class="clickme-banner__image"><img src="./221059.png"></div><div class="clickme-banner__body">Ваш подарок уже упакован!<span class="clickme-banner__limit">16+</span><div class="clickme-banner__text">Скидки и предложения от крупных интернет-магазинов.</div></div></a></div></div><script type="text/javascript" src="./BannerHandler.js.Без названия"></script></div>
+
+<script type="text/javascript">
+	Criteo.events.push(function() {
+		Criteo.Passback.RenderAd('napi', function(){
+			var content = document.getElementById('napi');
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.src = 'https://hhcdn.ru/static/BannerHandler.js';
+			s.setAttribute("data-request-banner", "place=673&domainAreaId=1");
+			content.appendChild(s);
+		});
+    });
+</script>
+
+
+</body></html>

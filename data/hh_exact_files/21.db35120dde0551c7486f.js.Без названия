@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{538:function(e,n,o){"use strict";o.r(n);var a=o(57);n.default={markAsViewed:function(e){a.default.postFormData("/notices/mark_as_viewed",{name:e}).then(function(){},console.error)},markAsViewedEvent:{ON_SHOW:"ON_SHOW",ON_HIDE:"ON_HIDE"}}}}]);
+//# sourceMappingURL=21.db35120dde0551c7486f.js.map
