@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[236],{1324:function(a,e,n){var r=n(11);a.exports=new r.Template({code:function(a,e,n){var r=this;return r.b(n=n||""),r.b('<div class="cian-placemarks-balloon-header">'),r.b(r.t(r.f("header",a,e,0))),r.b("&nbsp;"),r.b(r.v(r.f("headerTrl",a,e,0))),r.b("</div>"),r.b("\n"),r.fl()},partials:{},subs:{}},'<div class="cian-placemarks-balloon-header">{{{header}}}&nbsp;{{headerTrl}}</div>\n',r)}}]);
+//# sourceMappingURL=236.682ea660da174f13337c.js.map

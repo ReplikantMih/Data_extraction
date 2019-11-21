@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{539:function(e,a,n){"use strict";n.r(a);var r=n(1371),o=window.globalVars.country,u=window.globalVars.locale;"2"===o&&"en_RU"===u&&(u="uk_UA"),a.default=Object(r.a)({lang:["ru_RU","en_US","en_RU","ru_UA","uk_UA","tr_TR"].indexOf(u)>-1?u:"ru_RU",apiKey:window.globalVars.features.ymaps_api_key||"bd2ce8bf-561f-4940-be08-6e87317d767b"}).catch(function(e){return Promise.reject(e)})}}]);
+//# sourceMappingURL=18.91f48d5548cdfacebdfc.js.map
