@@ -1,0 +1,265 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Mail.Ru</title><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/><script>
+			function createRadar(name, iZ, log, DWH){
+				var data  = {},
+					url,
+					radar = function (s, x, time) {
+					if (s == 'clear') {
+						data = {};
+					} else if (typeof s == 'string') {
+						if (x == 1 && data[s] && !data[s][1]) {
+							if (typeof time === 'number') {
+								data[s][1] = time;
+							} else {
+								data[s][1] = Date.now();
+							}
+						} else if (x != 1 && !data[s]) {
+							if (typeof time === 'number') {
+								data[s] = [time, 0];
+							} else {
+								data[s] = [Date.now(), 0];
+							}
+						}
+					} else {
+						var i = [], a, v, k, dt;
+						for (k in data) if (data.hasOwnProperty(k)) {
+							v = data[k];
+							dt = v[1] - v[0];
+							if (dt < 0) {
+								data = {};
+								return;
+							} else if (iZ && !dt) {
+								continue;
+							}
+							i.push(k + ':' + dt);
+							if (k == 'all') {
+								a = dt;
+							}
+						}
+						if (i.length && a) {
+							url = '//msplash.radar.imgsmail.ru/update?p=msplash&t=' + name + '&v=' + a + '&i=' + i.join(',') + '&rnd=' + Math.random() + (document.referrer ? '&r=' + escape(document.referrer) : '');
+							url = DWH ? url + DWH : url;
+							(new Image()).src = url;
+						}
+						data = {};
+					}
+					return radar;
+				};
+				radar.clear = function (){ data = {}; return radar; };
+				return radar;
+			}
+			var mr = {};
+
+			mr.settingLf1Percent =3;
+			mr.timestamp =1574681885514;
+			mr.timezone =10800;
+
+			var DWH = '&ver=m&l=0&em=0&a=0&xy=0';
+
+			var splashRadar = createRadar('xpage', false, false, DWH);
+			splashRadar('all');
+			splashRadar('server', 0,1574681885514);
+
+			function getLocalDate() {
+				var date = new Date(window.mr.timestamp);
+
+				date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+				date.setSeconds(date.getSeconds() + mr.timezone);
+
+				return date;
+			}
+
+			mr.dpr = window.devicePixelRatio;</script><meta name="description" content="Главная страница Mail.Ru для мобильных телефонов и смартфонов"/><meta name="keywords" content="мобильный портал mail.ru, мобильная почта, почта для телефонов, мобильная версия, версия для смартфонов, версия для телефонов"/><meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, initial-scale=1.0, minimum-scale=1.0"/><meta name="format-detection" content="telephone=no"/><meta name="MobileOptimized" content="176"/><link rel="apple-touch-icon" href="//limg.imgsmail.ru/msplash/v/i/apple-touch-icon.png.dc69c277704f18d8a5689a7cb8365226eabddd2b.png"/><link rel="shortcut icon" type="image/x-icon" href="//limg.imgsmail.ru/msplash/v/i/favicon.ico.d0881808e042e7525b67e7fa8b1e2762daf9115b.ico"/><link rel="apple-touch-icon" sizes="60x60" href="//limg.imgsmail.ru/msplash/v/i/apple-touch-icon-60x60.png.d31a5edc6fe53830f2fac1a67b0ae61ef6b383e5.png"/><link rel="apple-touch-icon" sizes="120x120" href="//limg.imgsmail.ru/msplash/v/i/apple-touch-icon-120x120.png.1c790e6e68795b8cd410cfd1edfd3d4ff0c574f6.png"/><link rel="icon" sizes="192x192" href="//limg.imgsmail.ru/msplash/v/i/android-touch-icon-192x192.png.7729fc88d5eb92db0794107f9a953493922fd595.png"/><link rel="stylesheet" media="all, handheld" href="//limg.imgsmail.ru/msplash/v/c/index.css.37d9f5a9c3604fdf9d370a54b4df135c03d03937.css"/></head><body class="page"><script src="//limg.imgsmail.ru/msplash/v/j/index.js.f2f8446b3df7986329d64009b604753f64021cc9.js"></script><script src="//limg.imgsmail.ru/msplash/v/j/suggests.js.b138eb95c473fca56aba6e56733522c7c9f5855d.js"></script><div class="counter"><img src="https://rs.mail.ru/d957301.gif?test_id=63&amp;rnd=215585631&ts=1574681885" style="width:0;height:0;position:absolute;visibility:hidden;" alt=""/>
+<img src="//top-fwz1.mail.ru/counter?id=2104775;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+<img src="//rs.mail.ru/d368066.gif" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<img src="//www.tns-counter.ru/V13a****mail_ru/ru/CP1251/tmsec=mail_main-mobile/" width="1" height="1" alt="" style="position:absolute;"  />
+
+<img src="//top-fwz1.mail.ru/counter?id=110605;js=na;r=;u=http%3A%2F%2Fmail.ru%2Fm" height="1" width="1" alt="" border="0" /> 
+<img src="//counter.yadro.ru/hit;mail-splash/m?r;uhttp%3A%2F%2Fm.mail.ru%2f;" height="1" width="1" alt="" border="0" />
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" /></div><div class="header"><a class="header__logotype" href="."><img class="header__logotype__image" src="//limg.imgsmail.ru/msplash/v/i/header__logotype.png.64688b161478415510ae8507ecb75f6279429fa0.png" alt="Mail.Ru" width="63" height="21"/></a></div><div class="social"><a href="https://r.mail.ru/n109322822" class="social__link"><img src="//limg.imgsmail.ru/msplash/v/i/social__icon_for_mail.png.372e5c4d82ed00f2aa05c035c060102556ce398d.png" width="20" height="20" class="social__icon"/><span class="social__title-ct"><span class="social__title">Почта</span></span></a><div class="social__tools"><a href="https://r.mail.ru/n109837808" class="social__register">Регистрация</a></div></div><div class="social"><a href="http://r.mail.ru/n109322865" class="social__link"><img src="//limg.imgsmail.ru/msplash/v/i/social__icon_for_my.png.0d67efa29aa101443d459a9dfb87f15f3216ae12.png" width="20" height="20" class="social__icon"/><span class="social__title-ct"><span class="social__title">Мой Мир</span></span></a></div><div id="search"><form action="//go.mail.ru/msearch" class="form form_search" accept-charset="UTF-8" id="form-search"><input class="form__input form__input_hidden" name="fr" type="hidden" value="mn"/><input class="form__input form__input_hidden" name="mailru" type="hidden" value="1"/><button id="button-search" class="form__input form__input_button" type="submit">Найти</button><input id="input-q" class="form__input form__input_text" name="q" type="text" autocomplete="off" placeholder="Поиск в интернете"/></form><div class="go-suggests"><div class="go-suggests__items"></div><div class="go-suggests__loading"></div></div><script class="go-suggests__tmpl" type="text/jstmpl"><div class="go-suggests__item">
+                            <% if( itemData.type === "site" ) { %>
+                                <a class="go-suggests__item__link" href="<%= itemData.link %>">
+                                    <% if (itemData.favicon && mr.support.dataURI) { %>
+                                        <i class="go-suggests__item__favicon" style="background-image:url(data:image/png;base64,<%= itemData.favicon %>);"></i>
+                                    <% } %>
+                                    <span class="go-suggests__item__text"><%= itemData.site %></span>
+                                </a>
+                            <% } else { %>
+                                <span class="go-suggests__item__text">
+                                    <%= ( itemData.textMarked || itemData.text ) %>
+                                </span>
+                            <% } %>
+                        </div></script></div><script>if (/Opera Mobi/.test(window.navigator.userAgent)) {
+                    mr.addClass(mr.cls('page'), 'page_ua_omc');
+                }
+                mr.initSearch();</script><div class="weather"><div class="weather__head"><a class="weather__city" href="http://r.mail.ru/n109327653">Москва</a> <span class="weather__date" id="weather__date"></span></div><div class="weather__body"><img class="weather__icon" src="//limg.imgsmail.ru/msplash/v/i/weather__icon_for_suncloud.png.516c0f2d190dea95962e6183149529fd97f48acb.png" width="30" height="30" alt="полупрозрачная облачность"/><a href="http://r.mail.ru/n109802142" class="weather__desc"><strong class="weather__desc__item">-3, полупрозрачная облачность</strong><span class="weather__desc__item">Вечером -4, завтра -3</span></a></div></div><script>
+				(function(){
+					var days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+						months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+						el = document.getElementById('weather__date'),
+						timeout = 1000,
+						timestamp = (new Date).getTime();
+
+						function delta() {
+							return (new Date).getTime() - timestamp;
+						}
+
+						function setDate() {
+							var timestamp = new Date(getLocalDate().getTime() + delta()),
+								date,
+								day;
+
+							date = timestamp.getDate() + ' ' + months[timestamp.getMonth()];
+							day = days[timestamp.getDay()];
+
+							el.innerHTML = '<span class="weather__date__item">' + date + '</span><span class="weather__date__item">, ' + day + '</span>';
+
+							setTimeout(setDate, timeout);
+					}
+					setDate();
+				})();
+			</script><a href="http://r.mail.ru/n109323170" class="heading">Новости</a><div class="slider" id="news-slider"><a class="slider__item slider__item_active" href="http://r.mail.ru/n109323170" id="news-slider-active" data-for="news-0">Россия</a><a class="slider__item" href="//r.mail.ru/clb1493341/news.mail.ru/inregions/moscow/90/" data-for="news-1">Москва</a><a class="slider__item" href="http://r.mail.ru/n109323710" data-for="news-2">Авто</a><a class="slider__item" href="https://r.mail.ru/n109323582" data-for="news-3">Hi-Tech</a><a class="slider__item" href="http://r.mail.ru/n109323707" data-for="news-4">Леди</a></div><div class="list" id="news-0">
+
+<a class="list__item" href="https://r.mail.ru/n314880153?&amp;test_id=63&amp;rnd=101431101" rel="noopener"><div class="list__item__desc"><span class="list__item__title">В Нижегородской области более 40 детей отравились газом</span></div></a><a class="list__item" href="https://r.mail.ru/n314877701?&amp;test_id=63&amp;rnd=101431101" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Россиянам хотят разрешить все способы защиты жизни</span></div></a><a class="list__item" href="https://r.mail.ru/n314860313?&amp;test_id=63&amp;rnd=101431101" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Синоптики предупредили о&nbsp;грядущей &laquo;атмосферной впадине&raquo;</span></div></a><a class="list__item" href="https://r.mail.ru/n314872832?&amp;test_id=63&amp;rnd=101431101" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Полиция проверит видео с&nbsp;ребенком, счищающим снег со школы</span></div></a><a class="list__item" href="https://r.mail.ru/n314883369?&amp;test_id=63&amp;rnd=101431101" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Азовское море отступило от&nbsp;берега на&nbsp;сотню метров (фото)</span></div></a>
+
+
+<a class="list__item list__item_label_right" href="https://r.mail.ru/n314761702?&amp;test_id=63&amp;rnd=157539819" rel="noopener"><div class="list__item__desc"><span class="list__item__label">Авто</span><span class="list__item__title">Новый внедорожник для&nbsp;миллиардеров: он&nbsp;похож на&nbsp;битые &laquo;Жигули&raquo;</span></div></a><img src="https://rs.mail.ru/d1492320.gif?test_id=63&amp;rnd=756547520&ts=1574681885" style="width:0;height:0;position:absolute;visibility:hidden;" alt=""/>
+
+<a class="list__item list__item_label_right" href="https://r.mail.ru/n314821146?&amp;test_id=63&amp;rnd=756547520" rel="noopener"><div class="list__item__desc"><span class="list__item__label">Hi-tech</span><span class="list__item__title">Культовая техника 90-х: вспоминаем, как это было (фото)</span></div></a>
+
+<a class="list__item list__item_label_right" href="https://r.mail.ru/n314769752?&amp;test_id=63&amp;rnd=112987187" rel="noopener"><div class="list__item__desc"><span class="list__item__label">Леди</span><span class="list__item__title">&laquo;Какая красивая Аллочка&raquo;: Галкин показал новое фото Пугачевой</span></div></a></div><div class="list list_hidden" id="news-1">
+
+<a class="list__item" href="https://r.mail.ru/n314872810?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Гидрометцентр пообещал москвичам потепление и&nbsp;снег</span></div></a><a class="list__item" href="https://r.mail.ru/n314843687?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Проезд на&nbsp;МЦД две недели будет бесплатным</span></div></a><a class="list__item" href="https://r.mail.ru/n314872590?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Названа самая популярная станция МЦД</span></div></a><a class="list__item" href="https://r.mail.ru/n314872591?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Иностранец заплатил 25 тыс. рублей за&nbsp;такси из&nbsp;аэропорта в&nbsp;центр</span></div></a><a class="list__item" href="https://r.mail.ru/n314093222?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Тест: знаете ли вы о погодных рекордах в столице</span></div></a><a class="list__item" href="https://r.mail.ru/n314880844?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Суд вынес приговор избивавшему ученицу репетитору по музыке</span></div></a><a class="list__item" href="https://r.mail.ru/n314883961?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Как будет выглядеть станция &laquo;Улица 800-летия Москвы&raquo; (фото)</span></div></a><a class="list__item" href="https://r.mail.ru/n314874169?&amp;test_id=63&amp;rnd=125134314" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Столичные СИЗО расширили меню для заключенных</span></div></a></div><div class="list list_hidden" id="news-2">
+
+<a class="list__item list__item_img" href="https://r.mail.ru/n314713801?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/07/8CE4D4.jpg" width="" height="43" alt="Новый внедорожник для&nbsp;миллиардеров: он&nbsp;похож на&nbsp;битые &laquo;Жигули&raquo;"/><div class="list__item__desc"><span class="list__item__title">Новый внедорожник для&nbsp;миллиардеров: он&nbsp;похож на&nbsp;битые &laquo;Жигули&raquo;</span></div></a><a class="list__item" href="https://r.mail.ru/n314880405?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Пьяный депутат насмерть сбил школьника</span></div></a><a class="list__item" href="https://r.mail.ru/n314880406?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Какие автомобильные марки скоро исчезнут (Lifan будет первым)</span></div></a><a class="list__item" href="https://r.mail.ru/n314878534?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Трассу Москва &mdash; Казань могут продлить до Владивостока</span></div></a><a class="list__item" href="https://r.mail.ru/n314875900?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Немецкая Daimler Truck приобрела 15% &laquo;КАМАЗа&raquo;</span></div></a><a class="list__item" href="https://r.mail.ru/n314872536?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Автомобили заметно подорожают в 2020 году</span></div></a><a class="list__item" href="https://r.mail.ru/n314869290?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Киберпикап Илона Маска заказали больше 200 000 человек</span></div></a><a class="list__item" href="https://r.mail.ru/n314867795?&amp;test_id=63&amp;rnd=45136511" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Когда нельзя надеяться на&nbsp;ОСАГО</span></div></a></div><div class="list list_hidden" id="news-3">
+
+<a class="list__item list__item_img" href="https://r.mail.ru/n314820592?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/27/9D9301.jpg" width="" height="43" alt="5 способов продлить работу вашего смартфона"/><div class="list__item__desc"><span class="list__item__title">5 способов продлить работу вашего смартфона</span></div></a><a class="list__item" href="https://r.mail.ru/n314879076?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Xiaomi представила свою самую необычную новинку (фото)</span></div></a><a class="list__item" href="https://r.mail.ru/n314879580?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Легенда вернется опять: Motorola Razr 2 станет еще лучше</span></div></a><a class="list__item" href="https://r.mail.ru/n314865552?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Что известно о новейшем флагмане Nokia</span></div></a><a class="list__item" href="https://r.mail.ru/n314865553?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Данные миллиарда людей обнаружены в открытом доступе</span></div></a><a class="list__item" href="https://r.mail.ru/n314879077?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Как выглядит компьютер будущего (фото)</span></div></a><a class="list__item" href="https://r.mail.ru/n314820593?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Новинка Samsung &laquo;утекла&raquo; в сеть до анонса </span></div></a><a class="list__item" href="https://r.mail.ru/n314764111?&amp;test_id=63&amp;rnd=306086477" rel="noopener"><div class="list__item__desc"><span class="list__item__title">&laquo;Телефонная ферма&raquo;: как зарабатывают с помощью смартфонов</span></div></a></div><div class="list list_hidden" id="news-4">
+
+<a class="list__item list__item_img" href="https://r.mail.ru/n314836205?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/E8/CD3164.jpg" width="43" height="43" alt="От Брежневой до Лорак: все звезды на музыкальной премии"/><div class="list__item__desc"><span class="list__item__title">От Брежневой до Лорак: все звезды на музыкальной премии</span></div></a><a class="list__item" href="https://r.mail.ru/n314836206?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Марина Газманова показала архивные фото с мужем</span></div></a><a class="list__item" href="https://r.mail.ru/n314769686?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">68-летняя Ирина Алферова произвела фурор в сети</span></div></a><a class="list__item" href="https://r.mail.ru/n314864325?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">&laquo;Я была полной с детства&raquo;: история похудения на 64 кг</span></div></a><a class="list__item" href="https://r.mail.ru/n314804131?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Из &laquo;Фабрики&raquo; в ислам: как сегодня живет Мария Алалыкина</span></div></a><a class="list__item" href="https://r.mail.ru/n314836209?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">В сети появилось новое фото сына Орбакайте с девушкой</span></div></a><a class="list__item" href="https://r.mail.ru/n314853825?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Сколько тратят на врачей русские звезды</span></div></a><a class="list__item" href="https://r.mail.ru/n314797568?&amp;test_id=63&amp;rnd=894599435" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Как изменилась жизнь 27-летней Майли Сайрус после развода</span></div></a></div><script>
+				(function (mr) {
+					var si = mr.id('news-slider-active');
+					mr.Event.on([mr.id('news-slider'), mr.id('news-slider-dropdown')], 'click', function (e) {
+						if (!mr.hasClass(e.target, 'slider__item_active')) {
+							e.preventDefault();
+							if (mr.hasClass(e.target, 'slider__item_caret_down')) {
+								mr.removeClass(e.target, 'slider__item_caret_down');
+								mr.addClass(e.target, 'slider__item_caret_up');
+								mr.removeClass(mr.id('news-slider-dropdown'), 'slider_hidden');
+							} else if (mr.hasClass(e.target, 'slider__item_caret_up')) {
+								mr.removeClass(e.target, 'slider__item_caret_up');
+								mr.addClass(e.target, 'slider__item_caret_down');
+								mr.addClass(mr.id('news-slider-dropdown'), 'slider_hidden');
+							} else if (mr.hasClass(e.target, 'slider__item')) {
+								mr.removeClass(si, 'slider__item_active');
+								mr.addClass(mr.id(si.getAttribute('data-for')), 'list_hidden');
+								si = e.target;
+								mr.addClass(si, 'slider__item_active');
+								mr.removeClass(mr.id(si.getAttribute('data-for')), 'list_hidden');
+							}
+						}
+					});
+				})(mr);
+			</script><a href="http://r.mail.ru/n109326490" class="heading">Курсы валют</a><div class="forex">
+<div class="forex__item"><span class="forex__value">USD 63.92</span><span class="forex__delta forex__delta_plus">+0.05</span></div><div class="forex__item"><span class="forex__value">EUR 70.39</span><span class="forex__delta forex__delta_minus">-0.03</span></div></div><a href="http://r.mail.ru/n109326825" class="heading">Гороскоп</a><div class="list list_valign_top"><a class="list__item list__item_img" href="https://r.mail.ru/n182922814?&amp;test_id=63&amp;rnd=210816993"><span class="list__item__icon"><span class="list__item__icon__img  list__item__icon__img_aquarius_2x"></span></span><div class="list__item__desc"><span class="list__item__title">Водолей – день начинается легко и удачно. Вам стоит поторопиться, потому что влияние позитивных тенденций со...</span></div></a></div><a href="http://r.mail.ru/n109323480" class="heading">Афиша</a><div class="list list_valign_top">
+
+<a class="list__item list__item_label_left" href="https://r.mail.ru/n314593160?&amp;test_id=63&amp;rnd=347149173" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Аванпост</span><span class="list__item__label">триллер, боевик, фантастика</span></div></a><a class="list__item list__item_label_left" href="https://r.mail.ru/n314124300?&amp;test_id=63&amp;rnd=347149173" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Ford против Ferrari</span><span class="list__item__label">драма, биография, боевик, спорт</span></div></a><a class="list__item list__item_label_left" href="https://r.mail.ru/n314124301?&amp;test_id=63&amp;rnd=347149173" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Ангелы Чарли</span><span class="list__item__label">комедия, боевик, приключения</span></div></a></div><a href="http://r.mail.ru/n109326813" class="heading">Мобильные игры</a><div class="list list_label_block"><img src="https://rs.mail.ru/d42024916.gif?test_id=63&amp;rnd=774801545&ts=1574681885" style="width:0;height:0;position:absolute;visibility:hidden;" alt=""/>
+<a class="list__item list__item_img list__item_label" href="https://r.mail.ru/n303007234?&amp;test_id=63&amp;rnd=774801545" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/CA/5C51B8.png" width="43" height="43" alt="Хроники Хаоса"/><div class="list__item__desc"><span class="list__item__title">Хроники Хаоса</span><span class="list__item__label">он-лайн</span></div></a><a class="list__item list__item_img list__item_label" href="https://r.mail.ru/n303007236?&amp;test_id=63&amp;rnd=774801545" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/E7/E67F4E.png" width="43" height="43" alt="Небоскрёбы"/><div class="list__item__desc"><span class="list__item__title">Небоскрёбы</span><span class="list__item__label">он-лайн</span></div></a><a class="list__item list__item_img list__item_label" href="https://r.mail.ru/n303007237?&amp;test_id=63&amp;rnd=774801545" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/pictures/5F/522240.png" width="43" height="43" alt="Волшебники"/><div class="list__item__desc"><span class="list__item__title">Волшебники</span><span class="list__item__label">он-лайн</span></div></a></div><a href="http://r.mail.ru/n109326796" class="heading">Спорт</a><div class="list">
+
+<a class="list__item" href="https://r.mail.ru/n314865390?&amp;test_id=63&amp;rnd=143130622" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Армейцы прицепились к&nbsp;&laquo;Локомотиву&raquo;: обзор матчей тура в РПЛ</span></div></a><a class="list__item" href="https://r.mail.ru/n314866104?&amp;test_id=63&amp;rnd=143130622" rel="noopener"><div class="list__item__desc"><span class="list__item__title">&laquo;Могут закрыть сектор&raquo;: фанаты &laquo;Спартака&raquo; унизили Дзюбу</span></div></a><a class="list__item" href="https://r.mail.ru/n314867055?&amp;test_id=63&amp;rnd=143130622" rel="noopener"><div class="list__item__desc"><span class="list__item__title">Круче Овечкина. Свечников штурмует НХЛ, а&nbsp;ему всего 19 лет</span></div></a></div>
+<div class="heading">Приложения</div><div class="list "><a class="list__item list__item_img" href="https://r.mail.ru/n286137743?&amp;test_id=63&amp;rnd=115513739" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/img/DF/87A912.png" width="32" height="32" alt="Почта"/><div class="list__item__desc"><span class="list__item__title">Почта</span></div></a><a class="list__item list__item_img" href="https://r.mail.ru/n286137744?&amp;test_id=63&amp;rnd=115513739" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/img/0B/F0F236.png" width="32" height="32" alt="Одноклассники"/><div class="list__item__desc"><span class="list__item__title">Одноклассники</span></div></a><a class="list__item list__item_img" href="https://r.mail.ru/n286137745?&amp;test_id=63&amp;rnd=115513739" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/img/1C/B815DB.png" width="32" height="32" alt="MAPS.ME"/><div class="list__item__desc"><span class="list__item__title">MAPS.ME</span></div></a><a class="list__item list__item_img" href="https://r.mail.ru/n286137746?&amp;test_id=63&amp;rnd=115513739" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/img/76/13D242.png" width="32" height="32" alt="Новости"/><div class="list__item__desc"><span class="list__item__title">Новости</span></div></a><a class="list__item list__item_img" href="https://r.mail.ru/n286137747?&amp;test_id=63&amp;rnd=115513739" rel="noopener"><img class="list__item__img" src="https://r.mradx.net/img/62/67381B.png" width="32" height="32" alt="ICQ"/><div class="list__item__desc"><span class="list__item__title">ICQ</span></div></a>
+        </div><div class="heading">Другие проекты</div><div class="list list_columns"><div class="list__item__tr"><a class="list__item list__item_img" href="http://r.mail.ru/n109323545"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_love.png.87335be6f630a459903ecdb9d37c52d9b372bb8c.png" width="16" height="16" alt="Знакомства"/><div class="list__item__desc"><span class="list__item__title">Знакомства</span></div></a><a class="list__item list__item_img" href="http://r.mail.ru/n111003030"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_otvet.png.25c9a547a7212f803b349916520cce880ecbd52c.png" width="16" height="16" alt="Ответы"/><div class="list__item__desc"><span class="list__item__title">Ответы</span></div></a></div><div class="list__item__tr"><a class="list__item list__item_img" href="http://r.mail.ru/n109323551"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_tv.png.792dfd88e6b2b6aa1e2cc57e9237c3c60b47a679.png" width="16" height="16" alt="ТВ программа"/><div class="list__item__desc"><span class="list__item__title">ТВ программа</span></div></a><a class="list__item list__item_img" href="http://r.mail.ru/n109323710"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_auto.png.1e58693a48d054f2def6c9382064b172dcb55bbf.png" width="16" height="16" alt="Авто"/><div class="list__item__desc"><span class="list__item__title">Авто</span></div></a></div><div class="list__item__tr"><a class="list__item list__item_img" href="http://r.mail.ru/n109323552"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_health.png.e144250dbe8136d46de0fb222d7f49bb566f2836.png" width="16" height="16" alt="Здоровье"/><div class="list__item__desc"><span class="list__item__title">Здоровье</span></div></a><a class="list__item list__item_img" href="http://r.mail.ru/n109323718"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_horo.png.c00fdfe08c4faff8719a363d78c208d93949f487.png" width="16" height="16" alt="Гороскопы"/><div class="list__item__desc"><span class="list__item__title">Гороскопы</span></div></a></div><div class="list__item__tr"><a class="list__item list__item_img" href="http://r.mail.ru/n109323582"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_hi-tech.png.ee6eda7c43515d6da4d79cc74f6de89a9d264889.png" width="16" height="16" alt="Hi-tech"/><div class="list__item__desc"><span class="list__item__title">Hi-tech</span></div></a><a class="list__item list__item_img" href="http://r.mail.ru/n109323729"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_money.png.ec677b6aadca57c0c8a436ed70b5dcff48570dfa.png" width="16" height="16" alt="Деньги"/><div class="list__item__desc"><span class="list__item__title">Деньги</span></div></a></div><div class="list__item__tr"><a class="list__item list__item_img" href="http://r.mail.ru/n109323693"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_torg.png.467d7b0151e5aa57ca606d0154fda9bbfe65860f.png" width="16" height="16" alt="Товары"/><div class="list__item__desc"><span class="list__item__title">Товары</span></div></a><a class="list__item list__item_img" href="http://r.mail.ru/n109323739"><img class="list__item__img" src="//limg.imgsmail.ru/msplash/v/i/list__item_icon_maps.png.5d006b60cf1bc8b5bde106829cb453ffa0d5254b.png" width="16" height="16" alt="Карты"/><div class="list__item__desc"><span class="list__item__title">Карты</span></div></a></div></div><div class="footer"><a class="footer__item" href="http://r.mail.ru/n109328261">Оставить отзыв</a><a class="footer__item" href="http://r.mail.ru/n111960446">Сменить регион</a><a class="footer__item" href="http://r.mail.ru/n109336603" id="switch-to-full">Полная версия</a><div class="footer__copyright">© Mail.Ru, 2019</div></div><script type="text/javascript">
+                mr.Event.on(mr.id('switch-to-full'), 'click', function (e) {
+                    e.preventDefault();
+                    var timestamp = parseInt((getLocalDate().getTime() + 12 * 60 * 60 * 1000) / 1000, 10);
+                    mr.s_cookie.setGlobal('m_mr', timestamp);
+                    window.location.href = this.getAttribute('href');
+                });
+                if (mr.lf1Percent(mr.settingLf1Percent)) {
+                    new Image().src = mr.getLf1Url({
+                        zero: 1,
+                        r: Date.now() + Math.random()
+                    });
+                }
+            </script><div class="counter">
+
+<script type="text/javascript">
+//<![CDATA[
+(function(w, d) {
+        if (w.rb_counter) return;
+        function h() {
+                var n, a = arguments;
+                for(var i=a.length;i--;){
+                        n = a[i].split(',');
+                        for(var j=n.length;j--;){
+                                c(n[j]);
+                        }
+                }
+        }
+        function c(n) {
+                var m, r = parseInt(Math.random()*1E9), s;
+                if (!(m = n.match(/^(?:cl([bn])|([adgin]))(\d+)(?:sz(\d+))?/))) return;
+                if (m[1]) {
+                        s = "s" + m[1];
+                }
+                else if(m[2] == "n") {
+                        s = "nc";
+                }
+                else if(m[2]=="i") {
+                        r = null;
+                        s = m[2];
+                }
+                else {
+                        s = m[2];
+                }
+                s += m[3] + ".gif?";
+                if (m[4]) s += "sz=" + m[4];
+                if (r) s += "&rnd=" + r;
+                (new Image).src = "//rs.mail.ru/" + s + "&test_id=63";
+        }
+        (function(o, e, fn) {
+                if (o.addEventListener) o.addEventListener(e, fn, false);
+                else if (o.attachEvent) o.attachEvent('on' + e, fn);
+                else o['on' + e] = fn;
+        })(d, 'mousedown', function(e) {
+                var n;
+                e = e || w.event;
+                e = e.target || e.srcElement;
+                while (e.parentNode){
+                        if (e.getAttribute && (n = e.getAttribute('name')) && (n = n.toString())){
+                                h(n);
+                        }
+                        e = e.parentNode;
+                }
+        });
+        w.rb_counter = h;
+})(window, document);
+//]]>
+</script>
+
+
+
+
+</div><script>
+                    if (window.pageYOffset == 0) {
+                        window.scrollTo(0, 1);
+                    }
+                    (function(){
+                        if (window.performance && window.performance.timing) {
+                            var t = window.performance.timing;
+                            if (t.connectStart && t.connectEnd) {
+                                splashRadar('connect', 0, t.connectStart)('connect', 1, t.connectEnd);
+                            }
+                            if (t.domainLookupStart && t.domainLookupEnd) {
+                                var domainLookup = 'domainLookup' + (t.domainLookupEnd - t.domainLookupStart == 0 ? '0' : '');
+                                splashRadar(domainLookup, 0, t.domainLookupStart)(domainLookup, 1, t.domainLookupEnd);
+                            }
+                            if (t.requestStart && t.responseStart) {
+                                splashRadar('request', 0, t.requestStart)('request', 1, t.responseStart);
+                            }
+                            if (t.responseStart && t.responseEnd) {
+                                splashRadar('response', 0, t.responseStart)('response', 1, t.responseEnd);
+                            }
+                        }
+                    })();
+                    mr.s_cookie[(mr.dpr != void 0 && mr.dpr > 1 ? 'set' : 'remove') + 'Global']('dpr', mr.dpr);
+                splashRadar('server', 1,1574681885518);
+                splashRadar('all', 1)(true);</script></body></html>
